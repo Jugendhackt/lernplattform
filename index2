@@ -1,0 +1,43 @@
+<!doctype html>
+<head>
+
+</head>
+
+
+<table></table>
+
+    <?php
+
+        $host = "localhost"; 
+        $user = "root";
+        $password = "";
+        $dbname = "lernplattform";
+
+        $sql = "SELECT * FROM videos ORDER BY id DESC";
+        $con = mysqli_connect($host, $user, $password, $dbname);
+        $fetchVideos = mysqli_query($con, "SELECT * FROM videos ORDER BY id DESC");
+        while($row = mysqli_fetch_assoc($fetchVideos)){
+          $location = $row['video'];
+          $id = $row['id'];
+          echo "<div >";
+          echo "<video src='".$location."' controls width='1280px' height='720px' >";
+          echo "</div>";
+            $fetchComments = mysqli_query($con, "SELECT * FROM comments where vid_id = ".$id." ORDER BY id DESC");
+            while($row = mysqli_fetch_assoc($fetchComments)){
+                $content = $row['content'];
+                $author = $row['author'];
+                $vid_id = $row['vid_id'];
+                echo "<div >";
+                echo $content; 
+                echo $author;
+                echo $vid_id;
+                echo "</div>";
+            }
+        }
+
+    
+    ?> 
+</div>
+
+</body>
+</html>
