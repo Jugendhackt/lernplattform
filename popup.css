@@ -76,3 +76,60 @@
     border-radius: 10px;
     transition: .3s;
 }
+
+.new_upload_close {
+    margin-top: 3%;
+    margin-left: 90%;
+    background: transparent;
+    border: none;
+    color: red;
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-device-width: 500px) {
+    
+    .new_upload {
+        height: 550px;
+        width: 90%;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+    .new_upload_header {
+        font-size: 2.25em;
+    }
+
+    .new_upload_input {
+        height: 50px;
+        width: 60%;
+        font-size: 2em;
+    }
+
+    .new_upload_input:hover, .new_upload_input:focus {
+        height: 70px;
+    }
+
+    .new_upload__file_label {
+        width: 60%;
+    }
+
+    .new_upload_submit {
+        height: 50px;
+        width: 60%;
+        font-size: 2em;
+    }
+
+    .new_upload_submit:hover {
+        height: 60px;
+        width: 60%;
+        font-size: 2em;
+    }
+
+    .new_upload_close {
+        width: 40px;
+        height: 40px;
+        font-size: 2em;
+    }
+
+}

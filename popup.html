@@ -1,10 +1,51 @@
 <!DOCTYPE html>
 <head>
     <link href="popup.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function upload() {
+            var btn = document.getElementById('new_upload_submit');
+            var sucsess = true;
+
+            btn.style.borderColor = "yellow";
+            btn.style.borderWidth = "3px";
+
+            setTimeout(() => {btn.value = "Uplaoding.";}, 100);
+            setTimeout(() => {btn.value = "Uplaoding..";}, 200);
+            setTimeout(() => {btn.value = "Uplaoding...";}, 300);
+
+            setTimeout(() => {
+                if(sucsess == true) {
+                    btn.value = "Video Uplaoded!";
+                    btn.style.borderColor = "green";
+                } else {
+                    btn.value = "An error accured";
+                    btn.style.borderColor = "red";
+                }
+            }, 2500);
+
+            setTimeout(() => {
+                btn.value = "Upload";
+                btn.style.borderColor = "white";
+                btn.style.borderWidth = "1px";
+            }, 5000);
+        }
+
+        function close_pop() {
+            document.getElementById('new_upload').style.display = 'none';
+        }
+
+        function open_pop() {
+            document.getElementById('new_upload').style.display = 'block';
+        }
+    </script>
 </head>
 <body>
 
-    <div class="new_upload">
+    <input value="OPEN" type="button" onclick="open_pop()" /> </br />
+
+    <div class="new_upload" id="new_upload">
+        <input class="new_upload_close" type="button" value="x" onclick="close_pop()" />
+
         <h3 class="new_upload_header">Upload Video</h3>
 
         <input class="new_upload_input" type="text" placeholder="Video Name" />
@@ -14,9 +55,9 @@
         <label class="new_upload__file_label">
             Video
             <input class="new_upload_file_btn" type="file" />
-        </label>
+        </label> <br />
 
-        <input class="new_upload_submit" type="submit" value="Upload"/>
+        <input id="new_upload_submit" class="new_upload_submit" type="submit" value="Upload" onclick="upload()"/>
     </div>
 
 </body>
