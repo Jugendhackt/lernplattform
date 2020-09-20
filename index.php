@@ -1,7 +1,8 @@
 <!doctype html>
 
 <head>
-
+    <link rel="stylesheet" href="style.css">
+    <title>MySite</title>
 </head>
 
 <body>
@@ -68,6 +69,43 @@ if(isset($_POST["submit"])) {
 // Check if file already exists
 
 ?>
+
+    <header id="title">
+        <h1>
+            Videoplattform
+        </h1>
+        <nav id="menu">
+            <h1 id="sitename">MySite</h1>
+            <br />
+            <ul id="nav_menu">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Videos</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <a href="Video2.html">
+    <img height="409px" width="727px" src="posterimage.png" />
+  </a>
+
+  <a href="Video3.html">
+    <img height="409px" width="727px" src="posterimage3.png" />
+  </a>
+
+  <a href="Video4.html">
+    <img height="409px" width="727px" src="posterimage4.png" />
+  </a>
+
+  <a href="Video5.html">
+    <img height="409px" width="727px" src="posterimage5.png" />
+  </a>
+
+
+  <div class="fab-upload-file">
+    <div class="upload-icon"> <input type="file" id="upload" name="upload"> </div>
+  </div>
 
     <form method="post" enctype="multipart/form-data">
         <p>Select a video to upload:</p> <br />
